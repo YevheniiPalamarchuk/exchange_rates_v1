@@ -9,7 +9,7 @@ API_KEY = os.getenv("CURRENCY_API_KEY")
 @app.route('/exchange', methods=['GET'])
 def get_exchange_rates():
     base = request.args.get("base", "USD")
-    currencies = request.args.get("currencies", "EUR,GBP,PLN,JPY,RUB,UAH")
+    currencies = request.args.get("currencies", "EUR,GBP,PLN,JPY,RUB")
 
     if not API_KEY:
         return jsonify({"error": "API key not set"}), 500
