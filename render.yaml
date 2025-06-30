@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: exchange-rates-proxy
+    env: python
+    buildCommand: ""
+    startCommand: "gunicorn app:app"
+    envVars:
+      - key: CURRENCY_API_KEY
+        sync: false
